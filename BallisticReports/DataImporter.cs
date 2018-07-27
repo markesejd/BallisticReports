@@ -4,24 +4,35 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using BallisticReports.Data;
+using BallisticReports.DataImporters;
 using Microsoft.Owin.Hosting;
+using Neo4jClient;
 using Newtonsoft.Json;
 
 namespace BallisticReports
 {
     public class DataImporter
     {
-        private IDisposable _webApp;
+        private readonly IEnumerable<IScheduledImport> _scheduledImports;
+        public DataImporter(IEnumerable<IScheduledImport> scheduledImports)
+        {
+            _scheduledImports = scheduledImports;
+        }
 
         public void Start()
         {
-            _webApp = WebApp.Start<Startup>("http://localhost:45678");
+            foreach (var scheduledImport in _scheduledImports)
+            {
+                scheduledImport.Start();
+            }
         }
 
         public void Stop()
         {
-            _webApp?.Dispose();
+            foreach (var scheduledImport in _scheduledImports)
+            {
+                scheduledImport.Stop();
+            }
         }
     }
 }

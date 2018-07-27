@@ -1,16 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Newtonsoft.Json;
 
-namespace BallisticReports.Data
+namespace BallisticReports.DataModel
 {
-    using System;
-    using System.Collections.Generic;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-
     public partial class GameOdds
     {
         [JsonProperty("ID")]
@@ -55,6 +48,6 @@ namespace BallisticReports.Data
 
     public partial class GameOdds
     {
-        public static List<GameOdds> FromJson(string json) => JsonConvert.DeserializeObject<List<GameOdds>>(json, BallisticReports.Data.Converter.Settings);
+        public static List<GameOdds> FromJson(string json) => JsonConvert.DeserializeObject<List<GameOdds>>(json, Converter.Settings);
     }
 }

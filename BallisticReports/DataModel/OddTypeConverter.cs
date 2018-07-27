@@ -1,8 +1,8 @@
-﻿namespace BallisticReports.Data
-{
-    using System;
-    using Newtonsoft.Json;
+﻿using System;
+using Newtonsoft.Json;
 
+namespace BallisticReports.DataModel
+{
     internal class OddTypeConverter : JsonConverter
     {
         public override bool CanConvert(Type t) => t == typeof(OddType) || t == typeof(OddType?);
@@ -15,6 +15,8 @@
             {
                 case "FirstFiveInnings":
                     return OddType.FirstFiveInnings;
+                case "First Half":
+                    return OddType.FirstHalf;
                 case "Game":
                     return OddType.Game;
             }

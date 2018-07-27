@@ -1,7 +1,7 @@
-﻿namespace BallisticReports.Data
-{
-    using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
+namespace BallisticReports.DataModel
+{
     public partial class League
     {
         [JsonProperty("Name")]

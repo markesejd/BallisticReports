@@ -1,8 +1,8 @@
-﻿namespace BallisticReports.Data
-{
-    using System;
-    using Newtonsoft.Json;
+﻿using System;
+using Newtonsoft.Json;
 
+namespace BallisticReports.DataModel
+{
     public partial class Odd
     {
         [JsonProperty("ID")]
