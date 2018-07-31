@@ -20,11 +20,11 @@ namespace BallisticReports.DataImporters
             _writeDb = db; 
         }
 
-        protected override TimeSpan[] TimesToProcess() => new[] { new TimeSpan(17, 08, 0) }; //run right at 10 AM why not
+        protected override TimeSpan[] TimesToProcess() => new[] { new TimeSpan(12, 0, 0) }; //run right at 10 AM why not
 
         public override async Task Run(DateTime startDate, DateTime endDate)
         {
-            Logger.Debug("Running AdWords Import");
+            Logger.Debug("Running Game Odds Import");
 
             List<GameOdds> gameOdds = new List<GameOdds>();
 
@@ -41,7 +41,7 @@ namespace BallisticReports.DataImporters
             }
 
 
-
+            _writeDb.UpdateGameOdds(gameOdds);
         }
     }
 }

@@ -17,6 +17,10 @@ namespace BallisticReports.DataModel
                     return OddType.FirstFiveInnings;
                 case "First Half":
                     return OddType.FirstHalf;
+                case "First Quarter":
+                    return OddType.FirstQuarter;
+                case "First Period":
+                    return OddType.FirstPeriod;
                 case "Game":
                     return OddType.Game;
             }
@@ -39,6 +43,15 @@ namespace BallisticReports.DataModel
                 case OddType.Game:
                     serializer.Serialize(writer, "Game");
                     return;
+                case OddType.FirstHalf:
+                    serializer.Serialize(writer, "First Half");
+                    return;
+                case OddType.FirstQuarter:
+                    serializer.Serialize(writer, "First Quarter");
+                    break;
+                case OddType.FirstPeriod:
+                    serializer.Serialize(writer, "First Period");
+                    break;
             }
             throw new Exception("Cannot marshal type OddType");
         }

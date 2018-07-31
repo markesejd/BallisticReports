@@ -5,6 +5,7 @@ using Autofac;
 using BallisticReports.Database;
 using BallisticReports.DataImporters;
 using log4net;
+using log4net.Config;
 using Microsoft.Owin.Cors;
 using Neo4jClient;
 using Owin;
@@ -20,7 +21,7 @@ namespace BallisticReports
 
         static void Main(string[] args)
         {
-            log4net.Config.XmlConfigurator.Configure();
+            BasicConfigurator.Configure();
             var builder = new ContainerBuilder();
 
             builder.Register(context => NeoServerConfiguration.GetConfiguration(new Uri("http://localhost:7474/db/data"), "neo4j", "falcons"))

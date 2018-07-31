@@ -4,6 +4,8 @@
     {
         FirstFiveInnings,
         FirstHalf,
+        FirstQuarter,
+        FirstPeriod,
         Game
     };
 }

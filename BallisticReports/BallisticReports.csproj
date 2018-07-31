@@ -186,30 +186,18 @@
     <Compile Include="DataModel\Converter.cs" />
     <Compile Include="DataModel\GameOdds.cs" />
     <Compile Include="DataModel\League.cs" />
+    <Compile Include="DataModel\Neo4jModels\EventOdd.cs" />
+    <Compile Include="DataModel\Neo4jModels\ObjectConverter.cs" />
+    <Compile Include="DataModel\Neo4jModels\GameEvent.cs" />
     <Compile Include="DataModel\Odd.cs" />
     <Compile Include="DataModel\OddType.cs" />
     <Compile Include="DataModel\OddTypeConverter.cs" />
     <Compile Include="DataModel\Serialize.cs" />
     <Compile Include="NancyBootstrapper.cs" />
-    <Compile Include="Neo4J\Attributes\NodeLabelAttribute.cs" />
-    <Compile Include="Neo4J\Attributes\NodePropertyAttribute.cs" />
-    <Compile Include="Neo4J\Converters\ICustomPropertySerializer.cs" />
-    <Compile Include="Neo4J\Converters\PropertySerializers.cs" />
-    <Compile Include="Neo4J\EntityConverter.cs" />
-    <Compile Include="Neo4J\NodeDefinitionBuilder.cs" />
-    <Compile Include="Neo4J\NodeMetaData\NodeDefinition.cs" />
-    <Compile Include="Neo4J\NodeMetaData\NodeFieldDefinition.cs" />
-    <Compile Include="Neo4J\NodeMetaData\NodeMemberDefinition.cs" />
-    <Compile Include="Neo4J\NodeMetaData\NodePropertyDefinition.cs" />
-    <Compile Include="Neo4J\PropertyRetriever.cs" />
-    <Compile Include="Neo4J\RecordConverter.cs" />
-    <Compile Include="Neo4J\RunnerExtensions.Query.cs" />
-    <Compile Include="Neo4J\RunnerExtensions.QueryFirstOrDefault.cs" />
-    <Compile Include="Neo4J\RunnerExtensions.Update.cs" />
-    <Compile Include="Neo4J\RunnerExtensions.Write.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="DataImporter.cs" />
+    <Compile Include="DataImporters\DataImporter.cs" />
+    <Compile Include="Web\RunnerApi.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
